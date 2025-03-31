@@ -24,7 +24,7 @@ jobs:
           pipenv install
 
       - name: Run
-        run: python scrape.py
+        run: pipenv run python scrape.py
 
       - name: Commit
         run: |
