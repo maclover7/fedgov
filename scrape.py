@@ -8,11 +8,11 @@ def get_items(item_class, page):
 
 def save_items(item_class):
   results = []
-  first_page = get_items("leases", 1)
+  first_page = get_items(item_class, 1)
   results.extend(first_page[0])
 
   for page in range(2, first_page[1] + 1):
-    results.extend(get_items("leases", page)[0])
+    results.extend(get_items(item_class, page)[0])
 
   with open("data/%s.json" % (item_class), "w") as f:
     json.dump(results, f)
