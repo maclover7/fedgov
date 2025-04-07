@@ -15,7 +15,7 @@ def save_items(item_class):
     results.extend(get_items(item_class, page)[0])
 
   with open("data/%s.json" % (item_class), "w") as f:
-    json.dump(results, f)
+    json.dump(results, f, indent=2)
 
 for item_class in ["contracts", "grants", "leases"]:
   save_items(item_class)
